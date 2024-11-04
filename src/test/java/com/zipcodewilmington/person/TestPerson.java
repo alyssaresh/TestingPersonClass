@@ -14,7 +14,7 @@ public class TestPerson {
         Integer expectedAge = Integer.MAX_VALUE;
 
         // When
-        Person person = new Person();
+        Person person = new Person("", Integer.MAX_VALUE);
 
         // Then
         String actualName = person.getName();
@@ -30,7 +30,7 @@ public class TestPerson {
         String expected = "Leon";
 
         // When
-        Person person = new Person(expected);
+        Person person = new Person("Leon");
 
         // Then
         String actual = person.getName();
@@ -43,7 +43,7 @@ public class TestPerson {
         Integer expected = 5;
 
         // When
-        Person person = new Person(expected);
+        Person person = new Person(5);
 
         // Then
         Integer actual = person.getAge();
@@ -58,7 +58,7 @@ public class TestPerson {
         String expectedName = "Leon";
 
         // When
-        Person person = new Person(expectedName, expectedAge);
+        Person person = new Person("Leon", 5);
 
         // Then
         Integer actualAge = person.getAge();
@@ -71,8 +71,8 @@ public class TestPerson {
     @Test
     public void testSetName() {
         // Given
-        Person person = new Person();
-        String expected = "Leon";
+        Person person = new Person("Dash");
+        String expected = "Dash";
 
         // When
         person.setName(expected);
@@ -85,8 +85,8 @@ public class TestPerson {
     @Test
     public void testSetAge() {
         // Given
-        Person person = new Person();
-        Integer expected = 5;
+        Person person = new Person(31);
+        Integer expected = 31;
 
         // When
         person.setAge(expected);
@@ -95,4 +95,5 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
 }
